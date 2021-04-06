@@ -15,6 +15,7 @@ pipeline {
                 docker { image 'node:14.16.0-alpine3.13' }
             }
             steps {
+                sh "mkdir -p /build/react-app"
                 sh "rm -rf /build/react-app"
                 sh "cp -r ${WORKSPACE}/build/ /build/react-app"
             }
